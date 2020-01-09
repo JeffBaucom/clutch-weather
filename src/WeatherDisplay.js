@@ -38,6 +38,7 @@ class WeatherDisplay extends React.Component {
               <Typography variant="subtitle1">{(new Intl.DateTimeFormat('en-US', dateOptions).format(this.props.list[0].dt*1000))}</Typography>
               <Typography variant="subtitle2">{(new Date(this.props.list[0].dt*1000)).toLocaleDateString()} </Typography>
               
+              <Typography variant="subtitle2">{Math.round(this.props.list[0].main.temp - 273.15)*(9/5) + 32} &#8457;</Typography>
               <Typography variant="subtitle1">{this.props.list[0].weather[0].main}</Typography>
               <Typography variant="subtitle2">{this.props.list[0].weather[0].description}</Typography>
             </Grid>
@@ -46,6 +47,7 @@ class WeatherDisplay extends React.Component {
               <Typography variant="subtitle1">{(new Intl.DateTimeFormat('en-US', dateOptions).format(this.props.list[8].dt*1000))}</Typography>
               <Typography variant="subtitle2">{(new Date(this.props.list[8].dt*1000)).toLocaleDateString()}</Typography>
               
+              <Typography variant="subtitle2">{Math.round(this.props.list[8].main.temp - 273.15)*(9/5) + 32} &#8457;</Typography>
               <Typography variant="subtitle1">{this.props.list[8].weather[0].main}</Typography>
               <Typography variant="subtitle2">{this.props.list[8].weather[0].description}</Typography>
             </Grid>
@@ -54,6 +56,7 @@ class WeatherDisplay extends React.Component {
               <Typography variant="subtitle1">{(new Intl.DateTimeFormat('en-US', dateOptions).format(this.props.list[16].dt*1000))}</Typography>
               <Typography variant="subtitle2">{(new Date(this.props.list[16].dt*1000)).toLocaleDateString()}</Typography> 
               
+              <Typography variant="subtitle2">{Math.round(this.props.list[16].main.temp - 273.15)*(9/5) + 32} &#8457;</Typography>
               <Typography variant="subtitle1">{this.props.list[16].weather[0].main}</Typography>
               <Typography variant="subtitle2">{this.props.list[16].weather[0].description}</Typography>
             </Grid>
