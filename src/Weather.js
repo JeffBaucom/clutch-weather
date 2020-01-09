@@ -1,5 +1,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 import CityForm from './CityForm';
 import WeatherDisplay from './WeatherDisplay';
 
@@ -93,6 +94,10 @@ class Weather extends React.Component {
   render () {
     return (
       <div>
+        <Grid container alignItems="center" justify="center" spacing={2}>
+          <Grid item xs={10}>
+            <Typography className="header-typography" variant="h3">Clutch Weather</Typography>
+          </Grid>
         <CityForm onSubmit={this.handleFormSubmit} onChange={this.handleFormValueChange} formValue={this.state.formValue}/>
         <Grid container direction="column" spacing={2} justify="center" alignItems="center">
           {this.state.cities.map((data) => {
@@ -100,6 +105,7 @@ class Weather extends React.Component {
               <WeatherDisplay city={data.city} list={data.list} delete={this.handleDelete}/>
               </Grid>
           })}
+        </Grid>
         </Grid>
       </div>
     )
